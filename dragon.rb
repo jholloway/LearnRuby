@@ -38,6 +38,12 @@ class Dragon
     end
   end
   
+  def toss
+    puts "You toss #{@name} up into the air."
+    puts 'He giggles, which singes your eyebrows.'
+    passage_of_time
+  end
+  
   def rock
     puts "You rock #{@name} gently."
     @asleep = true

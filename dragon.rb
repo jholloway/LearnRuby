@@ -102,14 +102,41 @@ class Dragon
 
 end
 
-pet = Dragon.new 'Norbert'
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-    
+def help
+  puts 'COMMANDS:'
+  puts 'feed (f)'
+  puts 'toss (t)'
+  puts 'walk (w)'
+  puts 'rock (r)'
+  puts 'put to bed (b)'
+  puts 'exit (e)'
+  puts 'help (?)'
+end
+
+puts 'What would you like to name your baby dragon?'
+name = gets.chomp
+pet = Dragon.new name
+help
+
+while true
+  puts
+  command = gets.chomp
+  
+  if command == 'exit' || command == 'e'
+    exit
+  elsif command == 'help' || command == '?'
+    help
+  elsif command == 'feed' || command == 'f'
+    pet.feed
+  elsif command == 'toss' || command == 't'
+    pet.toss
+  elsif command == 'walk' || command == 'w'
+    pet.walk
+  elsif command == 'rock' || command == 'r'
+    pet.rock
+  elsif command == 'put to bed' || command == 'b'
+    pet.put_to_bed
+  else
+    puts "Please use one of the commands. Type 'help' or '?' for help."
+  end
+end
